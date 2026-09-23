@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جريدتي التعليمية - الاستثناء</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Tahoma","Arial",sans-serif;background:#f4f8ff;color:#263238}
+.page{max-width:1000px;margin:auto;padding:18px}
+header{background:linear-gradient(135deg,#7c4dff,#26c6da);color:white;border-radius:24px;padding:24px;text-align:center;box-shadow:0 8px 20px #0002}
+header h1{margin:0;font-size:clamp(28px,5vw,48px)}
+header p{margin:8px 0 0;font-size:18px}
+.badge{display:inline-block;background:#fff;color:#6a1b9a;padding:7px 14px;border-radius:30px;font-weight:bold;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px}
+.card{background:white;border-radius:20px;padding:20px;box-shadow:0 5px 16px #00000012;border:2px solid #e9eaf5}
+.card h2{margin-top:0;color:#5e35b1;font-size:23px}
+.example{background:#f3e5f5;border-right:6px solid #ab47bc;padding:12px;border-radius:12px;font-size:20px}
+.parts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.part{padding:9px 12px;border-radius:12px;color:#fff;font-weight:bold}
+.p1{background:#42a5f5}.p2{background:#ef5350}.p3{background:#66bb6a}
+.question{padding:12px;border-radius:14px;background:#f7f9fc;margin:10px 0}
+button{border:0;border-radius:12px;padding:11px 16px;background:#5e35b1;color:#fff;font-size:16px;font-weight:bold;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.option{display:block;width:100%;text-align:right;margin:7px 0;background:#e8eaf6;color:#283593}
+.option.correct{background:#c8e6c9;color:#1b5e20}
+.option.wrong{background:#ffcdd2;color:#b71c1c}
+.feedback{font-weight:bold;min-height:24px;margin-top:8px}
+.maze{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;max-width:360px;margin:15px auto}
+.cell{aspect-ratio:1;border-radius:8px;background:#eceff1;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:20px;cursor:pointer}
+.cell.wall{background:#5e35b1;color:white}.cell.start{background:#66bb6a;color:white}.cell.end{background:#ffca28}.cell.path{background:#b2ebf2}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+select,input{width:100%;padding:10px;border:2px solid #ddd;border-radius:10px;font-size:16px}
+.result{background:#e0f2f1;padding:12px;border-radius:12px;margin-top:10px;font-weight:bold}
+footer{text-align:center;margin:20px 0;color:#607d8b}
+@media print{
+ body{background:white}.page{max-width:none}.card{break-inside:avoid;box-shadow:none;border:1px solid #bbb}
+ button{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<h1>📰 جريدتي التعليمية</h1>
+<h2>الاستثناء بـ «إلا»</h2>
+<p>لغتي الجميلة • الصف الثالث الابتدائي</p>
+<span class="badge">تعلّم • العب • اكتشف</span>
+</header>
+
+<div class="grid">
+<section class="card">
+<h2>📚 خبر اليوم: ما الاستثناء؟</h2>
+<p>الاستثناء هو إخراج اسم من حكم شمل غيره، ونستخدم في درسنا أداة الاستثناء <b>«إلا»</b>.</p>
+<div class="example">حضر الطلابُ <b>إلا طالبًا</b>.</div>
+<div class="parts">
+<span class="part p1">المستثنى منه: الطلاب</span>
+<span class="part p2">أداة الاستثناء: إلا</span>
+<span class="part p3">المستثنى: طالبًا</span>
+</div>
+</section>
+
+<section class="card">
+<h2>💡 هل تعلم؟</h2>
+<ul>
+<li>«إلا» أداة استثناء.</li>
+<li>المستثنى هو الاسم الذي نخرجه من الحكم.</li>
+<li>ابحث أولًا عن الكلمة التي بعد «إلا» لتتعرف على المستثنى.</li>
+</ul>
+</section>
+</div>
+
+<section class="card" style="margin-top:16px">
+<h2>🎯 تحدّي الأسئلة</h2>
+<div class="question"><b>1. اختر المستثنى في الجملة: «قرأتُ القصصَ إلا قصةً واحدة.»</b>
+<button class="option" data-answer="wrong">القصص</button>
+<button class="option" data-answer="correct">قصةً</button>
+<button class="option" data-answer="wrong">قرأت</button>
+<div class="feedback"></div></div>
+<div class="question"><b>2. ما أداة الاستثناء؟</b>
+<button class="option" data-answer="wrong">من</button>
+<button class="option" data-answer="correct">إلا</button>
+<button class="option" data-answer="wrong">في</button>
+<div class="feedback"></div></div>
+<div class="question"><b>3. أكمل: «نجح الطلابُ ___ طالبًا.»</b>
+<button class="option" data-answer="correct">إلا</button>
+<button class="option" data-answer="wrong">ثم</button>
+<button class="option" data-answer="wrong">فوق</button>
+<div class="feedback"></div></div>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>🧩 متاهة «إلا»</h2>
+<p>اضغط الخلايا بالترتيب من 🟢 البداية إلى 🟡 النهاية. الطريق الصحيح يمر بالكلمات المرتبطة بالاستثناء.</p>
+<div class="maze" id="maze"></div>
+<div class="feedback" id="mazeMsg"></div>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>🔗 صِل المفهوم بمعناه</h2>
+<div class="match">
+<label>المستثنى منه
+<select data-correct="المجموعة">
+<option>اختر...</option><option>أداة الاستثناء</option><option>الاسم الخارج من الحكم</option><option>المجموعة التي شملها الحكم</option>
+</select></label>
+<label>إلا
+<select data-correct="الأداة">
+<option>اختر...</option><option>الأداة</option><option>الاسم الخارج من الحكم</option><option>المجموعة التي شملها الحكم</option>
+</select></label>
+<label>المستثنى
+<select data-correct="الاسم">
+<option>اختر...</option><option>الأداة</option><option>الاسم الخارج من الحكم</option><option>المجموعة التي شملها الحكم</option>
+</select></label>
+</div>
+<button id="checkMatch" style="margin-top:12px">تحقق من التوصيل</button>
+<div class="feedback" id="matchMsg"></div>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>🔤 كلمات متقاطعة مصغّرة</h2>
+<p>أكمل الكلمات:</p>
+<ol>
+<li>أداة الاستثناء في درسنا: <input id="cw1" placeholder="ثلاثة أحرف"></li>
+<li>الاسم الذي نخرجه من الحكم يسمى: <input id="cw2" placeholder="..."></li>
+<li>الكلمة التي شملها الحكم قبل «إلا»: <input id="cw3" placeholder="..."></li>
+</ol>
+<button id="checkCross">تحقق</button>
+<div class="feedback" id="crossMsg"></div>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>🔬 تجربة علمية صغيرة: «الاستثناء في الفرز»</h2>
+<p>ضعي أمامك 5 أقلام: أربعة بلون واحد وقلم بلون مختلف. قولي: «الأقلام متشابهة إلا قلمًا». ثم حددي المستثنى.</p>
+<div class="example">المجموعة: الأقلام — الأداة: إلا — المستثنى: القلم المختلف.</div>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>🇸🇦 ربط بالوطن</h2>
+<p>«يزور الناسُ معالمَ المملكة إلا معلمًا واحدًا في هذا النشاط.»</p>
+<p>🌱 فكّري: ما المستثنى؟ وما أداة الاستثناء؟</p>
+</section>
+
+<section class="card" style="margin-top:16px">
+<h2>⭐ بطاقة الخروج</h2>
+<p>اكتبي جملة من إنشائك تحتوي على «إلا»:</p>
+<input id="exitSentence" placeholder="مثال: حضر الأصدقاء إلا صديقًا.">
+<button id="showExit" style="margin-top:10px">عرض بطاقتي</button>
+<div class="result" id="exitResult" style="display:none"></div>
+</section>
+
+<footer>🌟 أحسنت! بالتدريب تصبح اللغة العربية أسهل وأجمل 🌟</footer>
+</div>
+
+<script>
+const root=document.querySelector('.page');
+document.querySelectorAll('.question').forEach(q=>{
+  q.querySelectorAll('.option').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      q.querySelectorAll('.option').forEach(b=>b.disabled=true);
+      const f=q.querySelector('.feedback');
+      if(btn.dataset.answer==='correct'){btn.classList.add('correct');f.textContent='✅ إجابة صحيحة، أحسنت!';}
+      else{btn.classList.add('wrong');f.textContent='💡 حاول مرة أخرى وتذكّر: الاسم بعد «إلا» هو المستثنى.';}
+    });
+  });
+});
+
+const cells=[
+'S','إلا','طلاب','ج','ب',
+'أ','إلا','طالب','هـ','و',
+'ز','ح','مستثنى','ط','ي',
+'ك','ل','مجموعة','ن','ع',
+'ف','ص','ق','ر','ن'
+];
+const maze=document.getElementById('maze');
+const route=[0,1,2,7,12,17,18,19,24];
+let clicked=[];
+cells.forEach((v,i)=>{
+ const c=document.createElement('div'); c.className='cell'; c.textContent=v;
+ if(i===0)c.classList.add('start');
+ if(i===24)c.classList.add('end');
+ c.addEventListener('click',()=>{
+   if(i===route[clicked.length]){c.classList.add('path');clicked.push(i);document.getElementById('mazeMsg').textContent=clicked.length===route.length?'🎉 وصلت إلى النهاية!':'👍 طريق صحيح!';}
+   else document.getElementById('mazeMsg').textContent='🔎 هذه ليست الخلية التالية في الطريق، جرّب خلية أخرى.';
+ });
+ maze.appendChild(c);
+});
+
+document.getElementById('checkMatch').addEventListener('click',()=>{
+ const sels=[...document.querySelectorAll('.match select')];
+ const ok=sels.every((s,i)=>s.value===['المجموعة','الأداة','الاسم'][i]);
+ document.getElementById('matchMsg').textContent=ok?'🎉 ممتاز! التوصيل صحيح.':'💡 راجع المعاني وحاول من جديد.';
+});
+document.getElementById('checkCross').addEventListener('click',()=>{
+ const a=document.getElementById('cw1').value.trim();
+ const b=document.getElementById('cw2').value.trim();
+ const c=document.getElementById('cw3').value.trim();
+ const ok=(a==='إلا'||a==='الا') && b.includes('مستثنى') && (c.includes('منه')||c.includes('المستثنى منه'));
+ document.getElementById('crossMsg').textContent=ok?'🎉 رائع! إجاباتك صحيحة.':'💡 الإجابات: إلا — المستثنى — المستثنى منه.';
+});
+document.getElementById('showExit').addEventListener('click',()=>{
+ const v=document.getElementById('exitSentence').value.trim();
+ const r=document.getElementById('exitResult');
+ r.style.display='block';
+ r.textContent=v?`🌟 بطاقتك: ${v}`:'اكتبي جملة أولًا، ثم اضغطي عرض بطاقتي.';
+});
+</script>
+</body>
+</html>
